@@ -84,55 +84,46 @@ function Login() {
               position: 'relative',
               left: '6px',
               top: '-65px',
-              border: '15px solid #00000066',  
-               
-             
+              border: '15px solid #00000066',
             }}
           />
           <h2>Login Here</h2>
         </div>
 
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label d-flex text-white">
-              Email
-            </label>
+          <div className="form-floating mb-3">
             <input
               type="text"
               name="email"
-              id="floating input"
+              id="email"
               placeholder="Enter email"
               value={formData.email}
               onChange={handleChange}
-              className={`form-control border-0 border-bottom ${errors.email ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.email ? 'is-invalid' : ''}`}
               style={{
-                borderRadius: '0',
                 backgroundColor: 'rgb(0, 0, 0, 0)',
                 color: 'white',
-                
               }}
             />
+            <label htmlFor="email" className="text-dark">Email</label>
             {errors.email && <p className="invalid-feedback">{errors.email}</p>}
           </div>
 
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label d-flex text-white">
-              Password
-            </label>
+          <div className="form-floating mb-3">
             <input
               type="password"
-              id="floating password"
+              id="password"
               name="password"
               placeholder="Enter password"
-              className={`form-control border-0 border-bottom text-white ${errors.password ? 'is-invalid' : ''}`}
+              className={`form-control ${errors.password ? 'is-invalid' : ''}`}
               value={formData.password}
               onChange={handleChange}
               style={{
-                borderRadius: '0',
                 backgroundColor: 'rgb(0, 0, 0, 0)',
-                color: 'white', 
+                color: 'white',
               }}
             />
+            <label htmlFor="password" className="text-dark">Password</label>
             {errors.password && <div className="invalid-feedback">{errors.password}</div>}
           </div>
 
