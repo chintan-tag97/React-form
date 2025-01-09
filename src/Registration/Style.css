@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    
+    color: #ffffff;
+   
+  }
+  
+  .login-card {
+    width: 350px;
+    background-color: rgb(0,0,0,0.4);
+    
+  }
+  
+  .btn-link {
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn-warning {
+    font-weight: bold;
+  }
+  
+.change-placeholder {
+ color: white;
+}
+
+.signup-card {
+    background-color: rgb(0,0,0,0.4);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    max-width: 90%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  
+  .btn-link {
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn-warning {
+    font-weight: bold;
+  }
+  
+  @media (max-width: 576px) {
+    .signup-card {
+      padding: 2rem 1.5rem;
+    }
+  
+    .btn-link {
+      font-size: 0.9rem;
+    }
+  }
+  
