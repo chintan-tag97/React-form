@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Form } from 'react-bootstrap';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 
-function Login() {
+function Reactform() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -58,11 +60,7 @@ function Login() {
           zIndex: -1,
         }}
       >
-        <source
-          src="image\\login-bg.mp4"
-          type="video/mp4"
-        />
-        Your browser does not support the video tag.
+        <source src="image\\login-bg.mp4" type="video/mp4" />
       </video>
 
       <div
@@ -91,61 +89,64 @@ function Login() {
         </div>
 
         <form onSubmit={handleSubmit}>
-          <div className="form-floating mb-3">
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="Enter email"
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Email "
+            className="mb-3 floating-email"
+            style={{
+              color: 'white', 
+            }}
+          >
+            <Form.Control
+              type="email"
+              placeholder="name@example.com"
+              onChange={handleChange}
               value={formData.email}
-              onChange={handleChange}
-              className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-              style={{
-                backgroundColor: 'rgba(0, 0, 0, 0)',
-                color: 'white',
-              }}
-            />
-            <label
-              htmlFor="email"
-              className="text-white"
+              name="email"
               style={{
                 backgroundColor: 'transparent',
-                color: 'red',
+                color: 'white',
+                border: 'none',
+                borderBottom: '2px solid white',
+                borderRadius: '0',
+                boxShadow: 'none',
+                outline: 'none',
               }}
-            >
-              Email
-            </label>
-            {errors.email && <p className="invalid-feedback">{errors.email}</p>}
-          </div>
+            />
+          </FloatingLabel>
 
-          <div className="form-floating mb-3">
-            <input
+          <FloatingLabel
+            controlId="floatingPassword"
+            label="Password"
+            style={{
+              color: 'white',
+            }}
+          >
+            {errors.password && (
+              <div className="invalid-feedback">{errors.password}</div>
+            )}
+            <Form.Control
               type="password"
-              id="password"
-              name="password"
-              placeholder="Enter password"
-              className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-              value={formData.password}
+              placeholder="Password"
               onChange={handleChange}
-              style={{
-                backgroundColor: 'rgba(0, 0, 0, 0)',
-                color: 'white',
-              }}
-            />
-            <label
-              htmlFor="password"
-              className="text-white"
+              value={formData.password}
+              name="password"
               style={{
                 backgroundColor: 'transparent',
                 color: 'white',
+                border: 'none',
+                borderBottom: '2px solid white',
+                borderRadius: '0',
+                boxShadow: 'none',
+                outline: 'none',
               }}
-            >
-              Password
-            </label>
-            {errors.password && <div className="invalid-feedback">{errors.password}</div>}
-          </div>
+            />
+          </FloatingLabel>
 
-          <button type="submit" className="btn btn-light w-100 text-bold mb-3">
+          <button
+            type="submit"
+            className="btn btn-light w-100 text-bold mb-3 mt-3"
+          >
             Login
           </button>
           <div className="d-flex flex-column align-items-start">
@@ -162,4 +163,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Reactform;
