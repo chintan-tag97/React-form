@@ -4,6 +4,7 @@ import './App.css';
 import Form from './Form.tsx';
 import Login from './Login.tsx';
 import Reactform from './Reactform.tsx';
+import Sigin from './Sigin.tsx';
 
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
     <div className="App">
      {/* <Form/> */}
     {/* <Login/> */}
-    <Reactform/>
+    {/* <Reactform/> */}
+    <Sigin/>
     </div>
   );
 }
