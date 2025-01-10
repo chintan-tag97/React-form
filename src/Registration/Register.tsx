@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 function Register() {
-  return (
-   
-    <div className="section position-relative">
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
+  const toggleCard = () => {
+    setIsLoggedIn(!isLoggedIn);
+  };
+
+  return (
+    <div className="section position-relative">
       <div className="section">
         <div className="container">
           <div className="row full-height justify-content-center">
@@ -18,22 +21,25 @@ function Register() {
                   <span>Sign Up</span>
                 </h6>
 
-                <input
-                  className="toggle"
-                  type="checkbox"
-                  id="slider"
-                  name="slider"
-                />
-                <label htmlFor="slider"></label>
+             
+                <div className="toggle-switch-container">
+                  <label className="switch">
+                    <input
+                      type="checkbox"
+                      checked={!isLoggedIn}
+                      onChange={toggleCard}
+                    />
+                    <span className="slider round"></span>
+                  </label>
+                </div>
 
                 <div className="card1 mx-auto">
-                  <div className="card1-2">
+                  <div className={`card1-2 ${isLoggedIn ? "" : "rotate"}`}>
                     <div className="card3">
                       <div className="card3-1">
                         <div className="section text-center">
                           <h4 className="mb-4 pb-3 text-white">Log In</h4>
                           <div className="form-group">
-                         
                             <input
                               type="text"
                               name="email"
@@ -50,7 +56,6 @@ function Register() {
                               placeholder="Your Password"
                               id="logpass"
                             />
-                            <i className="input-icon uil uil-lock-alt"></i>
                           </div>
                           <a href="#" className="btn mt-4 mb-3 bg-white">
                             SUBMIT
@@ -76,7 +81,6 @@ function Register() {
                               placeholder="Your Full Name"
                               id="name"
                             />
-                            <i className=""></i>
                           </div>
                           <div className="form-group mt-2">
                             <input
@@ -86,7 +90,6 @@ function Register() {
                               placeholder="Your Email"
                               id="logemail"
                             />
-                            <i className=""></i>
                           </div>
                           <div className="form-group mt-2">
                             <input
@@ -96,7 +99,6 @@ function Register() {
                               placeholder="Your Password"
                               id="logpass"
                             />
-                            <i className=""></i>
                           </div>
                           <a href="#" className="btn mt-4 bg-white font-weight-bold">
                             SUBMIT
@@ -112,7 +114,6 @@ function Register() {
         </div>
       </div>
     </div>
-    
   );
 }
 

@@ -1,12 +1,11 @@
 
-
 body {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 15px;
   line-height: 1.7;
   color: #c4c3ca;
-
+  
 }
 p {
   font-weight: 500;
@@ -33,6 +32,32 @@ h6 span {
   min-height: 100vh;
 }
 
+.card1::after {
+  content: "";
+  display: block;
+  background: linear-gradient(
+    90deg,
+    hsla(197, 100%, 64%, 1) 0%,
+    hsla(339, 100%, 55%, 1) 100%
+  );
+  height: 424px;
+  width: 464px;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%) rotate(0deg); 
+  animation: rotate 8s linear infinite;
+  z-index: -1; 
+
+}
+
+@media only screen and (max-width: 600px) {
+  .card1::before {
+    height: 431px;
+        width: 328px;
+    }
+  }
+  
 
 
 .card1 {
@@ -55,8 +80,7 @@ h6 span {
    transform-style: preserve-3d;
   transition: all 600ms ease-out;
   display: grid;
-  grid-template-areas: "frontAndBack";
-  backface-visibility: hidden;
+ 
  
   
 }
@@ -92,10 +116,69 @@ h6 span {
 }
 
 
+.toggle-switch-container {
+  margin: 15px 0;
+}
 
-.checkbox:checked~.card1 .card1-2 {
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(0, 54%, 81%);
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: hsl(0, 54%, 81%);;
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  background-color: #1f2029;
+  color: #c4c3ca;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.card1-2.rotate {
   transform: rotateY(180deg);
 }
+
+/* 
+.checkbox:checked~.card1 .card1-2 {
+  transform: rotateY(180deg);
+} */
 
 .card3-1 {
   position: absolute;
@@ -135,4 +218,5 @@ h6 span {
 
 
 
+              
 
