@@ -21,7 +21,6 @@ function Register() {
                   <span>Sign Up</span>
                 </h6>
 
-             
                 <div className="toggle-switch-container">
                   <label className="switch">
                     <input
@@ -61,7 +60,10 @@ function Register() {
                             SUBMIT
                           </a>
                           <p className="">
-                            <a href="#0" className="link text-white text-decoration-none ">
+                            <a
+                              href="#0"
+                              className="link text-white text-decoration-none "
+                            >
                               Forgot your password?
                             </a>
                           </p>
@@ -100,7 +102,10 @@ function Register() {
                               id="logpass"
                             />
                           </div>
-                          <a href="#" className="btn mt-4 bg-white font-weight-bold">
+                          <a
+                            href="#"
+                            className="btn mt-4 bg-white font-weight-bold"
+                          >
                             SUBMIT
                           </a>
                         </div>
