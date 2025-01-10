@@ -1,16 +1,18 @@
-
 body {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 1.7;
+ 
+
   color: #c4c3ca;
+  background-image: url("../bg-svg-pic.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
   
 }
 p {
   font-weight: 500;
   font-size: 14px;
-
 }
 
 h4 {
@@ -25,7 +27,6 @@ h6 span {
 .section {
   position: relative;
   width: 100%;
- 
 }
 
 .full-height {
@@ -34,31 +35,30 @@ h6 span {
 
 .card1::after {
   content: "";
-  display: block;
-  background: linear-gradient(
-    90deg,
-    hsla(197, 100%, 64%, 1) 0%,
-    hsla(339, 100%, 55%, 1) 100%
-  );
-  height: 424px;
-  width: 464px;
-  position: absolute;
-  top: 50%;
-  left: 50%; 
-  transform: translate(-50%, -50%) rotate(0deg); 
-  animation: rotate 8s linear infinite;
-  z-index: -1; 
 
+  outline-offset: 0;
+  outline-color: rgba(0, 130, 206, 0.75);
+  outline-style: solid;
+  animation: animateOutline 4s ease infinite;
 }
 
-@media only screen and (max-width: 600px) {
-  .card1::before {
-    height: 431px;
-        width: 328px;
-    }
+@keyframes animateOutline {
+  10% {
+    outline-color: rgba(240, 46, 214, 0.75);
   }
-  
 
+  50% {
+    outline-width: 10px;
+    outline-offset: 4px;
+    outline-color: rgba(19, 83, 121, 0);
+  }
+
+  100% {
+    outline-width: 10px;
+    outline-offset: 4px;
+    outline-color: rgba(231, 119, 13, 0);
+  }
+}
 
 .card1 {
   position: relative;
@@ -68,7 +68,6 @@ h6 span {
   margin-top: 60px;
   display: grid;
   perspective: 700px;
-
 }
 
 .card1-2 {
@@ -77,15 +76,10 @@ h6 span {
   position: absolute;
   top: 0;
   left: 0;
-   transform-style: preserve-3d;
+  transform-style: preserve-3d;
   transition: all 600ms ease-out;
   display: grid;
- 
- 
-  
 }
-
-
 
 .card1-2 div {
   backface-visibility: hidden;
@@ -96,7 +90,7 @@ h6 span {
   width: 100%;
   height: 100%;
   background-color: #2a2b38;
-  background-image: url('file:///C:/Users/Lenovo/Downloads/pat.svg');
+  background-image: url("../pat.svg");
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 300%;
@@ -104,7 +98,6 @@ h6 span {
   border-radius: 6px;
   left: 0;
   top: 0;
-  
 }
 .card3 {
   grid-area: frontAndBack;
@@ -114,7 +107,6 @@ h6 span {
   grid-area: frontAndBack;
   transform: rotateY(-180deg);
 }
-
 
 .toggle-switch-container {
   margin: 15px 0;
@@ -126,7 +118,6 @@ h6 span {
   width: 50px;
   height: 25px;
 }
-
 
 .slider {
   position: absolute;
@@ -153,22 +144,11 @@ h6 span {
 }
 
 input:checked + .slider {
-  background-color: hsl(0, 54%, 81%);;
+  background-color: hsl(0, 54%, 81%);
 }
 
 input:checked + .slider::before {
-  transform: translateX(24px);
-}
-
-.toggle-btn {
-  padding: 10px 20px;
-  font-size: 14px;
-  border: none;
-  background-color: #1f2029;
-  color: #c4c3ca;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
+  transform: translateX(20px);
 }
 
 .card1-2.rotate {
@@ -185,10 +165,7 @@ input:checked + .slider::before {
   width: 100%;
   padding: 0 35px;
   top: 10%;
- 
-  
 }
-
 
 .form-group {
   position: relative;
@@ -210,13 +187,6 @@ input:checked + .slider::before {
   color: #c4c3ca;
   background-color: #1f2029;
   border: none;
-  
-  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, .2);
+
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
 }
-
-
-
-
-
-              
-
