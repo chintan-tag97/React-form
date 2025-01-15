@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import "./Style.css";
+// import "./Style.css";
+import "./Register.scss";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Register() {

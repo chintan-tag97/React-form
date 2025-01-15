@@ -1,0 +1,192 @@
+$main-color: #c4c3ca;
+$bg-color: #1f2029;
+$black: black;
+$white: white;
+
+body {
+  color: $main-color;
+  background-image: url("../bg-svg-pic.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+p {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+h6 {
+  span {
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.section {
+  position: relative;
+  width: 100%;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.card1 {
+  position: relative;
+  width: 440px;
+  max-width: 100%;
+  height: 400px;
+  margin-top: 60px;
+  display: grid;
+  perspective: 700px;
+
+  &::after {
+    content: "";
+    outline-offset: 0;
+    outline-color: rgba(0, 130, 206, 0.75);
+    outline-style: solid;
+    animation: animateOutline 4s ease infinite;
+  }
+}
+
+@keyframes animateOutline {
+  10% {
+    outline-color: rgba(46, 201, 240, 0.75);
+  }
+  50% {
+    outline-width: 10px;
+    outline-offset: 4px;
+    outline-color: rgba(19, 83, 121, 0);
+  }
+  100% {
+    outline-width: 10px;
+    outline-offset: 4px;
+    outline-color: rgba(231, 119, 13, 0);
+  }
+}
+
+.card1-2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transition: all 600ms ease-out;
+  display: grid;
+
+  div {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+
+  &.rotate {
+    transform: rotateY(180deg);
+  }
+}
+
+.card3,
+.card4 {
+  width: 100%;
+  height: 100%;
+  background-color: #2a2b38;
+  background-image: url("../pat.svg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 300%;
+  position: absolute;
+  border-radius: 6px;
+  left: 0;
+  top: 0;
+}
+
+.card3 {
+  grid-area: frontAndBack;
+}
+
+.card4 {
+  grid-area: frontAndBack;
+  transform: rotateY(-180deg);
+}
+
+.toggle-switch-container {
+  margin: 15px 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $black;
+    transition: 0.4s;
+    border-radius: 25px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 19px;
+      width: 19px;
+      left: 3px;
+      bottom: 3px;
+      background-color: $white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  }
+}
+
+input:checked + .slider {
+  background-color: $black;
+
+  &::before {
+    transform: translateX(20px);
+  }
+}
+
+.card3-1 {
+  position: absolute;
+  width: 100%;
+  padding: 0 35px;
+  top: 10%;
+}
+
+.form-group {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.form-style {
+  padding: 13px 20px;
+  padding-left: 55px;
+  height: 48px;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  outline: none;
+  color: $main-color;
+  background-color: $bg-color;
+  border: none;
+
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+}
